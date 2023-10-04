@@ -26,7 +26,7 @@ const pool = mysql.createPool({
 
 
 export async function getNotes() {
-    const [notes] = await pool.query("SELECT * FROM notes;"); // use "destructuting" and async promise is returned
+    const [notes] = await pool.query("SELECT * FROM notes ORDER BY time DESC;"); // use "destructuting" and async promise is returned
     return notes;
 }
 
